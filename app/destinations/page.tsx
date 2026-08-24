@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
-import DestinationExplorer from "@/components/organisms/DestinationExplorer";
-import { categories } from "@/data/categories";
-import { destinations } from "@/data/destinations";
-import { DestinationCategory } from "@/types/destination";
+import DestinationExplorerWithQuery from "@/components/organisms/DestinationExplorerWithQuery";
 
 export const metadata: Metadata = {
   title: "Destinations",
@@ -11,18 +9,7 @@ export const metadata: Metadata = {
     "Browse and search heritage destinations across Pangasinan by name, town, or category.",
 };
 
-interface DestinationsPageProps {
-  searchParams: { category?: string };
-}
-
-export default function DestinationsPage({ searchParams }: DestinationsPageProps) {
-  const requestedCategory = searchParams.category as
-    | DestinationCategory
-    | undefined;
-  const isValidCategory = categories.some(
-    (category) => category.slug === requestedCategory
-  );
-
+export default function DestinationsPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
       <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -34,10 +21,9 @@ export default function DestinationsPage({ searchParams }: DestinationsPageProps
       </p>
 
       <div className="mt-8">
-        <DestinationExplorer
-          destinations={destinations}
-          initialCategory={isValidCategory ? requestedCategory : "all"}
-        />
+        <Suspense fallback={null}>
+          <DestinationExplorerWithQuery />
+        </Suspense>
       </div>
     </div>
   );
