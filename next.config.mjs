@@ -9,7 +9,9 @@ const basePath =
 const nextConfig = {
   // Static export for GitHub Pages hosting.
   output: "export",
-  basePath,
+  // Explicit (not shorthand) so actions/configure-pages can safely
+  // inject its basePath value without corrupting this file on CI.
+  basePath: basePath,
   // Exposed so the shared base-path helper can prefix local
   // public/ image paths at build time (required because
   // unoptimized next/image does not auto-prefix basePath).
