@@ -1,5 +1,4 @@
-import Link from "next/link";
-
+import CollapsibleFooterNav from "@/components/molecules/CollapsibleFooterNav";
 import { navigationItems } from "@/data/navigation";
 import { theme } from "@/data/theme";
 
@@ -8,6 +7,8 @@ const secondaryLinks = [
 ];
 
 export default function Footer() {
+  const footerLinks = [...navigationItems, ...secondaryLinks];
+
   return (
     <footer className="border-t border-gray-200 bg-gray-50">
       <div className="mx-auto max-w-6xl px-4 py-8">
@@ -22,26 +23,7 @@ export default function Footer() {
             <p className="mt-3 text-sm text-gray-600">{theme.client}</p>
           </div>
 
-          <nav aria-label="Footer navigation" className="flex flex-col gap-2">
-            {navigationItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="rounded-md text-sm font-medium text-gray-700 hover:text-teal-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
-              >
-                {item.label}
-              </Link>
-            ))}
-            {secondaryLinks.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="rounded-md text-sm font-medium text-gray-700 hover:text-teal-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+          <CollapsibleFooterNav links={footerLinks} />
         </div>
 
         <p className="mt-8 border-t border-gray-200 pt-4 text-xs leading-relaxed text-gray-500">

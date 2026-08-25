@@ -226,7 +226,7 @@ export default function DesignSystemPage() {
           code={'<OptimizedImage src="/images/x.jpg" alt="Descriptive alt" width={640} height={400} priority />'}
         >
           <OptimizedImage
-            src="/images/destinations/hundred-islands.jpg"
+            src="/images/destinations/hundred_island.jpg"
             alt="Islands scattered across the Lingayen Gulf"
             width={480}
             height={280}

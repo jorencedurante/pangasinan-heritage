@@ -38,7 +38,7 @@ export default function Hero() {
         </div>
 
         <OptimizedImage
-          src="/images/destinations/hundred-islands.jpg"
+          src="/images/destinations/hundred_island.jpg"
           alt="Islands scattered across the Lingayen Gulf at Hundred Islands National Park"
           width={1024}
           height={768}

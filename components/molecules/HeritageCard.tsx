@@ -18,7 +18,7 @@ export default function HeritageCard({ destination }: HeritageCardProps) {
         width={640}
         height={400}
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        className="w-full"
+        className="aspect-[16/9] w-full"
       />
 
       <div className="flex flex-col gap-3 p-5">

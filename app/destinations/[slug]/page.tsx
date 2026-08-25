@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 
 import HeritageGrid from "@/components/organisms/HeritageGrid";
 import Icon from "@/components/atoms/Icon";
-import OptimizedImage from "@/components/atoms/OptimizedImage";
+import ImageLightbox from "@/components/molecules/ImageLightbox";
 import Typography from "@/components/atoms/Typography";
 import { getCategoryLabel } from "@/data/categories";
 import { destinations } from "@/data/destinations";
@@ -68,14 +68,14 @@ export default function DestinationPage({ params }: DestinationPageProps) {
         Back to destinations
       </Link>
 
-      <OptimizedImage
+      <ImageLightbox
         src={destination.image}
         alt={destination.name}
         width={1200}
         height={600}
         priority
         sizes="(max-width: 1152px) 100vw, 1152px"
-        className="mt-6 w-full rounded-xl shadow-md"
+        className="h-64 w-full rounded-xl shadow-md md:h-80 lg:h-[420px]"
       />
 
       <header className="mt-8">
@@ -153,14 +153,15 @@ export default function DestinationPage({ params }: DestinationPageProps) {
             </Typography>
             <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
               {gallery.map((image, index) => (
-                <OptimizedImage
+                <ImageLightbox
                   key={image}
                   src={image}
                   alt={`${destination.name} photo ${index + 1}`}
                   width={400}
                   height={300}
                   sizes="(max-width: 640px) 100vw, (max-width: 1152px) 33vw, 380px"
-                  className="w-full rounded-lg"
+                  className="aspect-[4/3] w-full rounded-lg"
+                  triggerClassName="block w-full cursor-zoom-in rounded-lg border-0 bg-transparent p-0 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
                 />
               ))}
             </div>
