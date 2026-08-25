@@ -26,11 +26,11 @@ export const destinations: Destination[] = [
       "Boat tours depart from Lucap Wharf in Alaminos City. The dry season from November to May offers the calmest seas.",
     accessibility:
       "Developed islands have cottages and trails, but some areas involve stairs and uneven ground. Assistance is available at Lucap Wharf.",
-    image: "/images/destinations/hundred-islands.jpg",
+    image: "/images/destinations/hundred_island.jpg",
     gallery: [
-      "/images/destinations/hundred-islands.jpg",
-      "/images/destinations/hundred-islands-2.jpg",
-      "/images/destinations/hundred-islands-3.jpg",
+      "/images/destinations/hundred_island.jpg",
+      "/images/destinations/hundred_island-2.jpg",
+
     ],
     featured: true,
   },
@@ -206,7 +206,9 @@ export const destinations: Destination[] = [
     accessibility:
       "Boarding requires stepping into a boat from a small dock, which may challenge some visitors.",
     image: "/images/destinations/balingasay-river.jpg",
-    gallery: ["/images/destinations/balingasay-river.jpg"],
+    gallery: ["/images/destinations/balingasay-river.jpg",
+             "/images/destinations/balingasay-river-2.jpg",
+    ],
     featured: false,
   },
   {
