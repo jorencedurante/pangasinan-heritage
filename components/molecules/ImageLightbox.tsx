@@ -5,6 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 
 import Icon from "@/components/atoms/Icon";
 import OptimizedImage from "@/components/atoms/OptimizedImage";
+import { withBasePath } from "@/lib/base-path";
 
 interface ImageLightboxProps {
   src: string;
@@ -90,7 +91,7 @@ export default function ImageLightbox({
             className="flex max-h-[90vh] max-w-[95vw] items-center justify-center"
           >
             <Image
-              src={src}
+              src={withBasePath(src)}
               alt={alt}
               width={width}
               height={height}

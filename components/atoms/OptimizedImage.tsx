@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { withBasePath } from "@/lib/base-path";
+
 export interface OptimizedImageProps {
   src: string;
   alt: string;
@@ -21,7 +23,7 @@ export default function OptimizedImage({
 }: OptimizedImageProps) {
   return (
     <Image
-      src={src}
+      src={withBasePath(src)}
       alt={alt}
       width={width}
       height={height}
